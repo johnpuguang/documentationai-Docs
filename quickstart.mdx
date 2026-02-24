@@ -1,0 +1,146 @@
+---
+title: Getting Started with John Chen Docs
+description: Set up your account and create your first documentation project in minutes to begin organizing your content.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Before You Begin">
+Ensure you have:
+- A valid email address for registration
+- Browser: Chrome, Firefox, or Safari (latest version)
+- Optional: Node.js for CLI tools (v18+)
+</Callout>
+
+## Step 1: Create Your Account
+
+Follow these steps to register and log in to John Chen Docs.
+
+<Steps>
+  <Step title="Visit the Sign-Up Page" icon="external-link">
+    Navigate to `https://app.johnchen.com/signup`.
+  </Step>
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, create a strong password, and complete any CAPTCHA.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox and click the verification link.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to `https://app.johnchen.com/login` and sign in.
+  </Step>
+</Steps>
+
+## Step 2: Create a New Documentation Space
+
+Once logged in, set up your first project space.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Name Your Space" icon="edit">
+    Enter a name like `My Project Docs` and choose a description.
+  </Step>
+  <Step title="Configure Settings" icon="settings">
+    Set visibility (public/private) and add team members if needed.
+  </Step>
+  <Step title="Create Space" icon="check-circle">
+    Click **Create** to generate your space.
+  </Step>
+</Steps>
+
+## Step 3: Upload Your Initial Documents
+
+Add content to your space using these methods.
+
+<Tabs>
+  <Tab title="Drag & Drop" icon="upload">
+    In your space editor:
+    
+    1. Open the **Documents** tab.
+    2. Drag files (Markdown, PDF, images) directly into the upload area.
+    
+    Supported formats: `.mdx`, `.md`, `.pdf`, `.png`, `.jpg`.
+  </Tab>
+  <Tab title="API Upload" icon="api">
+    Use the Documents API to upload programmatically.
+    
+    <CodeGroup tabs="JavaScript,cURL">
+      ```javascript
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      formData.append('spaceId', 'your-space-id');
+      
+      const response = await fetch('https://api.johnchen.com/v1/documents', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${YOUR_API_KEY}`
+        },
+        body: formData
+      });
+      ```
+      ```bash
+      curl -X POST https://api.johnchen.com/v1/documents \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@/path/to/document.md" \
+        -F "spaceId=your-space-id"
+      ```
+    </CodeGroup>
+  </Tab>
+  <Tab title="CLI Tool" icon="terminal">
+    Install and use the John Chen CLI.
+    
+    <CodeGroup tabs="npm,yarn">
+      ```bash
+      npm install -g @johnchen/cli
+      johnchen login --api-key YOUR_API_KEY
+      johnchen upload ./docs --space your-space-id
+      ```
+      ```bash
+      yarn global add @johnchen/cli
+      johnchen login --api-key YOUR_API_KEY
+      johnchen upload ./docs --space your-space-id
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<ParamField path="spaceId" param-type="string" required="true">
+  Unique identifier for your documentation space.
+</ParamField>
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_API_KEY`.
+</ParamField>
+
+## Basic Interface Tour
+
+Explore the main sections of the John Chen Docs interface.
+
+<Columns cols={3}>
+  <Card title="Dashboard" icon="layout" href="#dashboard">
+    Overview of all your spaces, recent activity, and quick actions.
+  </Card>
+  <Card title="Editor" icon="edit-3" href="#editor">
+    Real-time Markdown/MDX editor with live preview and version history.
+  </Card>
+  <Card title="Search" icon="search" href="#search">
+    Full-text search across all documents and spaces.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Callout kind="tip" title="What's Next?">
+Dive deeper into advanced features.
+</Callout>
+
+<Columns cols={2}>
+  <Card title="Customize Your Docs" icon="settings" href="/introduction">
+    Learn styling, components, and themes.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="/authentication">
+    Invite members and manage permissions.
+  </Card>
+</Columns>

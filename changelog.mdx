@@ -1,0 +1,125 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released for the John Chen documentation platform.
+---
+
+## Recent Releases
+
+Stay informed about the latest enhancements to the John Chen documentation platform. Review changes below to understand new features, improvements, and fixes that enhance your experience managing feng shui course documentation and resources.
+
+<Callout kind="info">
+Subscribe to our RSS feed or join the community forum to receive notifications for new releases.
+</Callout>
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for multilingual documentation, including Traditional Chinese for feng shui terms
+- Introduced interactive course enrollment forms integrated with WhatsApp API
+- Enhanced search functionality with full-text indexing for wind water principles and case studies
+
+## Improvements
+
+- Optimized page load times by 40% through better image handling for course thumbnails
+- Updated UI components to better reflect brand colors like `#428BCA`
+
+## Bug Fixes
+
+- Fixed rendering issues with embedded YouTube videos in course previews
+- Resolved mobile responsiveness problems in testimonial sections
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launched `風水精英` community group integration for lifetime learner support
+- Added customizable templates for course landing pages with yin-yang layout previews
+
+## Improvements
+
+- Streamlined navigation for quick access to enrollment details and pricing ($39,988 package)
+
+## Bug Fixes
+
+- Corrected SVG image loading errors from external CDNs
+- Patched accessibility issues in image alt texts for feng shui diagrams
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Removed legacy shortcode syntax; migrate to new JSX components for all embeds
+
+## New Features
+
+- Integrated full hologram feng shui (全息風水) theory modules with interactive Mermaid diagrams
+- Added student testimonial carousel with dynamic loading
+
+## Improvements
+
+- Enhanced backend for handling course locations like Tsim Sha Tsui metro D exit
+
+</Update>
+
+## Upcoming Features
+
+<Columns cols={3}>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track documentation engagement and course interest metrics.
+  </Card>
+  <Card title="AI Feng Shui Assistant" icon="zap" href="/docs/ai-assistant">
+    Get automated layout suggestions based on user inputs.
+  </Card>
+  <Card title="Live Webinar Integration" icon="video" href="/docs/webinars">
+    Embed live sessions from Dr. John Chen's teachings.
+  </Card>
+</Columns>
+
+## How to Upgrade
+
+Follow these steps to ensure your documentation platform receives the latest updates.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Export your current documentation content to avoid data loss.
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+    <CodeGroup tabs="npm,yarn">
+````bash
+npm update john-chen-docs@latest
+````
+````bash
+yarn upgrade john-chen-docs@latest
+````
+    </CodeGroup>
+  </Step>
+  <Step title="Clear Cache" icon="refresh-cw">
+    Run `npm run clear-cache` or equivalent for your setup.
+  </Step>
+  <Step title="Test Changes" icon="check-circle">
+    Verify feng shui course pages and enrollment forms work correctly.
+  </Step>
+</Steps>
+
+<Expandable title="Migration Guide for v1.1.0 Breaking Changes" default-open="false">
+
+If you used legacy shortcodes, replace them with modern components:
+
+````jsx
+// Old
+[video url="https://youtube.com/embed/zBxXW1VoBkU"]
+
+// New
+<Video src="https://youtube.com/embed/zBxXW1VoBkU" title="Feng Shui Introduction" />
+````
+
+</Expandable>
+
+<Callout kind="tip">
+Check the [community forum](https://docs.example.com/forum) for detailed release notes and migration assistance.
+</Callout>
